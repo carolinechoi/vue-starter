@@ -8,7 +8,6 @@
 <script>
 import Map from "./components/Map";
 import Box from "./components/Box";
-
   export default {
     name: 'App',
     components: {
@@ -27,7 +26,6 @@ import Box from "./components/Box";
 
 <style>
   #app {
-    font-family: 'Arial';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;

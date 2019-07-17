@@ -1,21 +1,23 @@
 <template>
     <div id="main">
-        <dialog-drags id="dialog-1">
-            <div @click="test('hello flood response team')"> 
+        <dialog-drag id="dialog-1">
+            <div @click="test('hello flood response team')">
                 <p>Map would go here.</p><br>
                 <p>Use the lock emoji to lock this window in place.</p>
             </div>
-        </dialog-drags>
+        </dialog-drag>
     </div>
 </template>
 
 <script>
 import DialogDrag from '../../node_modules/vue-dialog-drag';
-
   export default {
-    name: 'Box',
+    name: 'App',
     components: {
         DialogDrag
+    },
+    props: {
+        message: String
     },
     methods: {
       test: function(message) {
