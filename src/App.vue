@@ -1,18 +1,21 @@
 <template>
   <div id="app">
     <h1 @click="drop">Caroline Choi</h1>
-    <Box />
+    <Box2 />
   </div>
 </template>
 
 <script>
 import Map from "./components/Map";
 import Box from "./components/Box";
+import Box2 from "./components/Box2";
+
   export default {
     name: 'App',
     components: {
         Map,
-        Box
+        Box,
+        Box2
     },
     methods: {
       drop: function() {
