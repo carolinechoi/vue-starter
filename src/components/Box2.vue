@@ -9,6 +9,8 @@
 <script>
 import DialogDrag from '../../node_modules/vue-dialog-drag';
 import L from 'leaflet';
+
+// downloaded the following from https://github.com/Esri/esri-loader
 import { loadModules } from 'esri-loader';
 
   export default {
