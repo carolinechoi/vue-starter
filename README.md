@@ -6,7 +6,7 @@ To start, clone this repository with the following command:
 $ git clone https://github.com/carolinechoi/vue-starter
 ```
 
-Then, because the <em>node_modules</em> are included in my <em>git.ignore</em>, run the following to install all required packages:
+Then, because the <em>node_modules</em> are included in my <em>.gitignore</em>, run the following to install all required packages:
 
 ```bash
 $ npm install
