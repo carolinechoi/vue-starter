@@ -163,7 +163,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_Box__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Box */ \"./src/components/Box.vue\");\n/* harmony import */ var _components_Box2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Box2 */ \"./src/components/Box2.vue\");\n//\n//\n//\n//\n//\n//\n//\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: 'App',\n  components: {\n    Box: _components_Box__WEBPACK_IMPORTED_MODULE_0__[\"default\"],\n    Box2: _components_Box2__WEBPACK_IMPORTED_MODULE_1__[\"default\"]\n  },\n  methods: {\n    drop: function () {\n      console.log(\"test\");\n    }\n  }\n});\n\n//# sourceURL=webpack:///./src/App.vue?./node_modules/babel-loader/lib??ref--0!./node_modules/vue-loader/lib??vue-loader-options");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_Box__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Box */ \"./src/components/Box.vue\");\n/* harmony import */ var _components_Box2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Box2 */ \"./src/components/Box2.vue\");\n/* harmony import */ var _components_Test__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Test */ \"./src/components/Test.vue\");\n//\n//\n//\n//\n//\n//\n//\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: 'App',\n  components: {\n    Box: _components_Box__WEBPACK_IMPORTED_MODULE_0__[\"default\"],\n    Box2: _components_Box2__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n    Test: _components_Test__WEBPACK_IMPORTED_MODULE_2__[\"default\"]\n  },\n  methods: {\n    drop: function () {\n      console.log(\"test\");\n    }\n  }\n});\n\n//# sourceURL=webpack:///./src/App.vue?./node_modules/babel-loader/lib??ref--0!./node_modules/vue-loader/lib??vue-loader-options");
 
 /***/ }),
 
@@ -187,7 +187,19 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_vue_dialog_drag__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/vue-dialog-drag */ \"./node_modules/vue-dialog-drag/dist/vue-dialog-drag.umd.js\");\n/* harmony import */ var _node_modules_vue_dialog_drag__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_dialog_drag__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! leaflet */ \"./node_modules/leaflet/dist/leaflet-src.js\");\n/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(leaflet__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var esri_loader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! esri-loader */ \"./node_modules/esri-loader/dist/umd/esri-loader.js\");\n/* harmony import */ var esri_loader__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(esri_loader__WEBPACK_IMPORTED_MODULE_2__);\n//\n//\n//\n//\n//\n//\n//\n//\n\n // downloaded the following from https://github.com/Esri/esri-loader\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: 'Box2',\n  components: {\n    DialogDrag: (_node_modules_vue_dialog_drag__WEBPACK_IMPORTED_MODULE_0___default())\n  },\n  props: {\n    message: String\n  },\n\n  mounted() {\n    this.initMap(); // this.showmap();\n  },\n\n  methods: {\n    test(id) {\n      alert('test id:' + id);\n    },\n\n    initMap() {\n      Object(esri_loader__WEBPACK_IMPORTED_MODULE_2__[\"loadModules\"])(['esri/Map', 'esri/views/SceneView', 'esri/layers/IntegratedMeshLayer']).then(([Map, SceneView, IntegratedMeshLayer]) => {\n        var layer = new IntegratedMeshLayer({\n          url: \"https://tiles.arcgis.com/tiles/FQD0rKU8X5sAQfh8/arcgis/rest/services/VRICON_Yosemite_Sample_Integrated_Mesh_scene_layer/SceneServer\"\n        });\n        var map = new Map({\n          basemap: \"satellite\",\n          layers: [layer],\n          ground: \"world-elevation\"\n        });\n        var view = new SceneView({\n          container: \"viewDiv\",\n          map: map,\n          camera: {\n            position: {\n              x: -13314225,\n              y: 4543000,\n              z: 1446,\n              spatialReference: {\n                wkid: 3857\n              }\n            },\n            tilt: 84,\n            heading: 85\n          }\n        });\n      }).catch(e => {\n        console.log(e);\n      });\n    }\n\n  }\n});\n\n//# sourceURL=webpack:///./src/components/Box2.vue?./node_modules/babel-loader/lib??ref--0!./node_modules/vue-loader/lib??vue-loader-options");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_vue_dialog_drag__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/vue-dialog-drag */ \"./node_modules/vue-dialog-drag/dist/vue-dialog-drag.umd.js\");\n/* harmony import */ var _node_modules_vue_dialog_drag__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_dialog_drag__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! leaflet */ \"./node_modules/leaflet/dist/leaflet-src.js\");\n/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(leaflet__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var esri_loader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! esri-loader */ \"./node_modules/esri-loader/dist/umd/esri-loader.js\");\n/* harmony import */ var esri_loader__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(esri_loader__WEBPACK_IMPORTED_MODULE_2__);\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n\n // downloaded the following from https://github.com/Esri/esri-loader\n\n // let x0;\n// let y0;\n// let z0;\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: 'Box2',\n  components: {\n    DialogDrag: (_node_modules_vue_dialog_drag__WEBPACK_IMPORTED_MODULE_0___default())\n  },\n  props: {\n    message: String\n  },\n\n  mounted() {\n    this.initMap(); // this.showmap();\n  },\n\n  props: {\n    x0: Number,\n    y0: Number,\n    z0: Number\n  },\n  methods: {\n    test(id) {\n      alert('test id:' + id);\n    },\n\n    initMap() {\n      Object(esri_loader__WEBPACK_IMPORTED_MODULE_2__[\"loadModules\"])(['esri/Map', 'esri/views/SceneView', 'esri/layers/IntegratedMeshLayer']).then(([Map, SceneView, IntegratedMeshLayer]) => {\n        var layer = new IntegratedMeshLayer({\n          url: \"https://tiles.arcgis.com/tiles/FQD0rKU8X5sAQfh8/arcgis/rest/services/VRICON_Yosemite_Sample_Integrated_Mesh_scene_layer/SceneServer\"\n        });\n        var map = new Map({\n          basemap: \"satellite\",\n          layers: [layer],\n          ground: \"world-elevation\"\n        });\n        var view = new SceneView({\n          container: \"viewDiv\",\n          map: map,\n          camera: {\n            position: {\n              // x: 3948354,\n              // y: 3545,\n              // z: 4565,\n              x: this.x0,\n              y: this.y0,\n              z: this.z0,\n              spatialReference: {\n                wkid: 3857\n              }\n            },\n            tilt: 84,\n            heading: 85\n          }\n        });\n      }).catch(e => {\n        console.log(e);\n      });\n    }\n\n  }\n});\n\n//# sourceURL=webpack:///./src/components/Box2.vue?./node_modules/babel-loader/lib??ref--0!./node_modules/vue-loader/lib??vue-loader-options");
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./src/components/Test.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Test.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n//\n//\n//\n//\n//\n//\n//\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: 'Test',\n  props: {\n    title: String\n  }\n});\n\n//# sourceURL=webpack:///./src/components/Test.vue?./node_modules/babel-loader/lib??ref--0!./node_modules/vue-loader/lib??vue-loader-options");
 
 /***/ }),
 
@@ -220,7 +232,7 @@ eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"\\n#viewDiv {\\r\\n  width: 600px;\\r\\n  height: 600px;\\n}\\r\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/components/Box2.vue?./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/vue-loader/lib??vue-loader-options");
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Module\nexports.push([module.i, \"\\n#viewDiv {\\r\\n  width: 400px;\\r\\n  height: 400px;\\n}\\r\\n\", \"\"]);\n\n\n\n//# sourceURL=webpack:///./src/components/Box2.vue?./node_modules/css-loader/dist/cjs.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/vue-loader/lib??vue-loader-options");
 
 /***/ }),
 
@@ -232,7 +244,7 @@ eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\n    \"div\",\n    { attrs: { id: \"app\" } },\n    [\n      _c(\"h1\", { on: { click: _vm.drop } }, [_vm._v(\"Caroline Choi\")]),\n      _vm._v(\" \"),\n      _c(\"Box2\")\n    ],\n    1\n  )\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=webpack:///./src/App.vue?./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\n    \"div\",\n    { attrs: { id: \"app\" } },\n    [\n      _c(\"h1\", { on: { click: _vm.drop } }, [_vm._v(\"Caroline Choi\")]),\n      _vm._v(\" \"),\n      _c(\"Box2\", { attrs: { x0: \"485940\", y0: \"3434545\", z0: \"455\" } })\n    ],\n    1\n  )\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=webpack:///./src/App.vue?./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options");
 
 /***/ }),
 
@@ -256,7 +268,19 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\"dialog-drag\", { attrs: { id: \"dialog-1\" } }, [\n    _c(\"div\", { attrs: { id: \"viewDiv\" } })\n  ])\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=webpack:///./src/components/Box2.vue?./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\"dialog-drag\", { attrs: { id: \"dialog-1\" } }, [\n    _c(\"p\", [_vm._v(\"x-coordinate: \" + _vm._s(_vm.x0))]),\n    _vm._v(\" \"),\n    _c(\"p\", [_vm._v(\"y-coordinate: \" + _vm._s(_vm.y0))]),\n    _vm._v(\" \"),\n    _c(\"p\", [_vm._v(\"z-coordinate: \" + _vm._s(_vm.z0))]),\n    _vm._v(\" \"),\n    _c(\"div\", { attrs: { id: \"viewDiv\" } })\n  ])\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=webpack:///./src/components/Box2.vue?./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options");
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/components/Test.vue?vue&type=template&id=dc87507c&":
+/*!**********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Test.vue?vue&type=template&id=dc87507c& ***!
+  \**********************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\"div\", { attrs: { id: \"test\" } }, [\n    _c(\"p\", [_vm._v(_vm._s(_vm.title))])\n  ])\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=webpack:///./src/components/Test.vue?./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options");
 
 /***/ }),
 
@@ -434,6 +458,42 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Box2_vue_vue_type_template_id_59cbac77___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../node_modules/vue-loader/lib??vue-loader-options!./Box2.vue?vue&type=template&id=59cbac77& */ \"./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/components/Box2.vue?vue&type=template&id=59cbac77&\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Box2_vue_vue_type_template_id_59cbac77___WEBPACK_IMPORTED_MODULE_0__[\"render\"]; });\n\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Box2_vue_vue_type_template_id_59cbac77___WEBPACK_IMPORTED_MODULE_0__[\"staticRenderFns\"]; });\n\n\n\n//# sourceURL=webpack:///./src/components/Box2.vue?");
+
+/***/ }),
+
+/***/ "./src/components/Test.vue":
+/*!*********************************!*\
+  !*** ./src/components/Test.vue ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Test_vue_vue_type_template_id_dc87507c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Test.vue?vue&type=template&id=dc87507c& */ \"./src/components/Test.vue?vue&type=template&id=dc87507c&\");\n/* harmony import */ var _Test_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Test.vue?vue&type=script&lang=js& */ \"./src/components/Test.vue?vue&type=script&lang=js&\");\n/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ \"./node_modules/vue-loader/lib/runtime/componentNormalizer.js\");\n\n\n\n\n\n/* normalize component */\n\nvar component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(\n  _Test_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n  _Test_vue_vue_type_template_id_dc87507c___WEBPACK_IMPORTED_MODULE_0__[\"render\"],\n  _Test_vue_vue_type_template_id_dc87507c___WEBPACK_IMPORTED_MODULE_0__[\"staticRenderFns\"],\n  false,\n  null,\n  null,\n  null\n  \n)\n\n/* hot reload */\nif (false) { var api; }\ncomponent.options.__file = \"src/components/Test.vue\"\n/* harmony default export */ __webpack_exports__[\"default\"] = (component.exports);\n\n//# sourceURL=webpack:///./src/components/Test.vue?");
+
+/***/ }),
+
+/***/ "./src/components/Test.vue?vue&type=script&lang=js&":
+/*!**********************************************************!*\
+  !*** ./src/components/Test.vue?vue&type=script&lang=js& ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Test_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../node_modules/babel-loader/lib??ref--0!../../node_modules/vue-loader/lib??vue-loader-options!./Test.vue?vue&type=script&lang=js& */ \"./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./src/components/Test.vue?vue&type=script&lang=js&\");\n/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__[\"default\"] = (_node_modules_babel_loader_lib_index_js_ref_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Test_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[\"default\"]); \n\n//# sourceURL=webpack:///./src/components/Test.vue?");
+
+/***/ }),
+
+/***/ "./src/components/Test.vue?vue&type=template&id=dc87507c&":
+/*!****************************************************************!*\
+  !*** ./src/components/Test.vue?vue&type=template&id=dc87507c& ***!
+  \****************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Test_vue_vue_type_template_id_dc87507c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../node_modules/vue-loader/lib??vue-loader-options!./Test.vue?vue&type=template&id=dc87507c& */ \"./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/components/Test.vue?vue&type=template&id=dc87507c&\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Test_vue_vue_type_template_id_dc87507c___WEBPACK_IMPORTED_MODULE_0__[\"render\"]; });\n\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Test_vue_vue_type_template_id_dc87507c___WEBPACK_IMPORTED_MODULE_0__[\"staticRenderFns\"]; });\n\n\n\n//# sourceURL=webpack:///./src/components/Test.vue?");
 
 /***/ }),
 

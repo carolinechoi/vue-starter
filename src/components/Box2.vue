@@ -1,5 +1,8 @@
 <template>
         <dialog-drag id="dialog-1">
+          <p>x-coordinate: {{ x0 }}</p>
+          <p>y-coordinate: {{ y0 }}</p>
+          <p>z-coordinate: {{ z0 }}</p>
           <!-- <div id="info" class="esri-widget"> -->
             <div id="viewDiv"></div>
           <!-- </div> -->
@@ -12,6 +15,9 @@ import L from 'leaflet';
 
 // downloaded the following from https://github.com/Esri/esri-loader
 import { loadModules } from 'esri-loader';
+// let x0;
+// let y0;
+// let z0;
 
   export default {
     name: 'Box2',
@@ -24,6 +30,11 @@ import { loadModules } from 'esri-loader';
     mounted() {
       this.initMap();
       // this.showmap();
+    },
+    props: {
+      x0: Number,
+      y0: Number,
+      z0: Number
     },
     methods: {
       test (id) {
@@ -45,9 +56,12 @@ import { loadModules } from 'esri-loader';
             map: map,
             camera: {
               position: {
-                x: -13314225,
-                y: 4543000,
-                z: 1446,
+                // x: 3948354,
+                // y: 3545,
+                // z: 4565,
+                x: this.x0,
+                y: this.y0,
+                z: this.z0,
                 spatialReference: {
                   wkid: 3857
                 }
@@ -68,7 +82,7 @@ import { loadModules } from 'esri-loader';
 
 <style>
 #viewDiv {
-  width: 600px;
-  height: 600px;
+  width: 400px;
+  height: 400px;
 }
 </style>
