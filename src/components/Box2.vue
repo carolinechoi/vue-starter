@@ -30,73 +30,35 @@ import { loadModules } from 'esri-loader';
         alert('test id:' + id);
       },
       initMap() {
-        // // first, we use Dojo's loader to require the map class
-        // loadModules(['esri/views/MapView', 'esri/WebMap'])
-        //   .then(([MapView, WebMap]) => {
-        //     // then we load a web map from an id
-        //     var webmap = new WebMap({
-        //       portalItem: { // autocasts as new PortalItem()
-        //         id: 'f2e9b762544945f390ca4ac3671cfa72'
-        //       }
-        //     });
-        //     // and we show that map in a container w/ id #viewDiv
-        //     var view = new MapView({
-        //       map: webmap,
-        //       container: 'viewDiv'
-        //     });
-        //   })
-        //   .catch(err => {
-        //     // handle any errors
-        //     alert(err);
-        //   });
-      // }
-          loadModules(['esri/Map', 'esri/views/SceneView', 'esri/core/watchUtils', 'vue'])
-            .then(([SceneView, Map, watchUtils, vue]) => {
-                const map = new Map({
-                    basemap: "hybrid",
-                    ground: "world-elevation"
-                });
-                console.log("made map");
-                const initialCamera = {
-                    position: [7.654, 45.919, 5184],
-                    tilt: 80,
-                    heading: 0
+        loadModules(['esri/Map', 'esri/views/SceneView', 'esri/layers/IntegratedMeshLayer'])
+        .then(([Map, SceneView, IntegratedMeshLayer]) => {
+          var layer = new IntegratedMeshLayer({
+            url: "https://tiles.arcgis.com/tiles/FQD0rKU8X5sAQfh8/arcgis/rest/services/VRICON_Yosemite_Sample_Integrated_Mesh_scene_layer/SceneServer"
+          });
+          var map = new Map({
+            basemap: "satellite",
+            layers: [layer],
+            ground: "world-elevation"
+          });
+          var view = new SceneView({
+            container: "viewDiv",
+            map: map,
+            camera: {
+              position: {
+                x: -13314225,
+                y: 4543000,
+                z: 1446,
+                spatialReference: {
+                  wkid: 3857
                 }
-                console.log("made camera");
-                const view = new SceneView({
-                    container: "viewDiv",
-                    map: map,
-                });
-                console.log("made view");
-                Vue.component("camera-info", {
-                    props: ["camera"],
-                    template: [
-                        "<div>",
-                        "<h2>Camera Details</h2>",
-                        "<p><strong>Heading</strong>: {{ camera.heading.toFixed(3) }}</p>",
-                        "<p><strong>Tilt</strong>: {{ camera.tilt.toFixed(3) }}</p>",
-                        "<p><strong>Latitude</strong>: {{ camera.position.latitude.toFixed(3) }}</p>",
-                        "<p><strong>Longitude</strong>: {{ camera.position.longitude.toFixed(3) }}</p>",
-                        "<button v-on:click='reset'>Reset Camera</button>",
-                        "</div>"
-                    ].join(""),
-                    methods: {
-                        reset() {
-                        const camera = this.camera.clone();
-                        camera.set(initialCamera);
-                        view.goTo(camera);
-                        }
-                    }
-                });
-            })
-            .catch(err => {
-                console.log(err);
-            });
-      },
-      showmap() {
-          window.onload = function() {
-            document.getElementById("viewDiv").style.visibility = "hidden";
-          }
+              },
+              tilt: 84,
+              heading: 85
+            }
+          }) 
+        }).catch(e => {
+          console.log(e);
+        });
       }
     }
   }

@@ -6,14 +6,12 @@
 </template>
 
 <script>
-import Map from "./components/Map";
 import Box from "./components/Box";
 import Box2 from "./components/Box2";
 
   export default {
     name: 'App',
     components: {
-        Map,
         Box,
         Box2
     },
