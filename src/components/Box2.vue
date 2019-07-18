@@ -1,8 +1,8 @@
 <template>
-        <dialog-drag id="dialog-1">
-          <p>x-coordinate: {{ x0 }}</p>
+        <dialog-drag style="display:none" id="dialog-1">
+          <!-- <p>x-coordinate: {{ x0 }}</p>
           <p>y-coordinate: {{ y0 }}</p>
-          <p>z-coordinate: {{ z0 }}</p>
+          <p>z-coordinate: {{ z0 }}</p> -->
           <!-- <div id="info" class="esri-widget"> -->
             <div id="viewDiv"></div>
           <!-- </div> -->
@@ -27,6 +27,9 @@ import { loadModules } from 'esri-loader';
     props: {
         message: String
     },
+    created() {
+      this.$eventHub.$on('openBox', this.makeAppear);
+    },
     mounted() {
       this.initMap();
       // this.showmap();
@@ -37,8 +40,13 @@ import { loadModules } from 'esri-loader';
       z0: Number
     },
     methods: {
-      test (id) {
-        alert('test id:' + id);
+      makeAppear: function() {
+        let x = document.getElementById("dialog-1");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
       },
       initMap() {
         loadModules(['esri/Map', 'esri/views/SceneView', 'esri/layers/IntegratedMeshLayer'])
@@ -56,12 +64,12 @@ import { loadModules } from 'esri-loader';
             map: map,
             camera: {
               position: {
-                // x: 3948354,
-                // y: 3545,
-                // z: 4565,
-                x: this.x0,
-                y: this.y0,
-                z: this.z0,
+                x: 3948354,
+                y: 3545,
+                z: 4565,
+                // x: this.x0,
+                // y: this.y0,
+                // z: this.z0,
                 spatialReference: {
                   wkid: 3857
                 }

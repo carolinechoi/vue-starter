@@ -11,3 +11,5 @@ let vm = new Vue({
         message: 'Hello Vue!'
     }
 })
+
+Vue.prototype.$eventHub = new Vue();
