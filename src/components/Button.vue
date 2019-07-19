@@ -1,12 +1,18 @@
 <template>
     <div id="main">
-        <button @click="emit">Click Me</button>
+        <button @click="onClick">hello</button>
     </div>
 </template>
 
 <script>
 export default {
-    name: "Button"
+    name: "Button",
+    methods: {
+        onClick: function(event) {
+            console.log("dlkfjsdlkf");
+            this.$emit('clicked', '34900')
+        }
+    }
 }
 
 </script>

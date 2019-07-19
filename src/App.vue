@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1 @click="drop">Caroline Choi</h1>
-    <Button />
+    <Button @clicked="onClickChild"></Button>
   </div>
 </template>
 
@@ -22,6 +22,9 @@ export default {
   methods: {
     drop: function() {
       console.log("test")
+    },
+    onClickChild (value) {
+      console.log(value);
     }
   }
 }
