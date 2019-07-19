@@ -1,5 +1,5 @@
 <template>
-        <dialog-drag style="display:none" id="dialog-1">
+        <dialog-drag id="dialog-1">
           <!-- <p>x-coordinate: {{ x0 }}</p>
           <p>y-coordinate: {{ y0 }}</p>
           <p>z-coordinate: {{ z0 }}</p> -->

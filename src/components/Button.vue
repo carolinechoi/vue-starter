@@ -10,6 +10,8 @@ export default {
     methods: {
         onClick: function(event) {
             console.log("dlkfjsdlkf");
+            this.$eventHub.$emit('openBox');
+            console.log("emitted openBox");
             this.$emit('clicked', '34900')
         }
     }
