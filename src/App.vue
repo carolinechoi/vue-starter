@@ -2,7 +2,7 @@
   <div id="app">
     <h1 @click="drop">Caroline Choi</h1>
     <Button @caroline="onClickChild"></Button>
-    <Box2 style="display: hidden;" id="dialogBox"></Box2>
+    <Box2 style="display: none;" id="dialogBox"></Box2>
   </div>
 </template>
 
@@ -20,23 +20,24 @@ export default {
       Test,
       Button
   },
-  created() {
-    this.$eventHub.$on('openBox', this.makeAppear);
-  },
   methods: {
     drop: function() {
       console.log("test")
     },
-    onClickChild (value) {
-      console.log(value);
-    },
     makeAppear() {
+      console.log("satrted makeAppear()");
       let x = document.getElementById("dialogBox");
       if (x.style.display === "none") {
         x.style.display = "block";
       } else {
         x.style.display = "none";
       }
+    },
+    onClickChild (value) {
+      console.log("started onClickChild");
+      console.log(value);
+      this.$eventHub.$on('openBox', this.makeAppear);
+      console.log("used $eventHub");
     }
   }
 }
