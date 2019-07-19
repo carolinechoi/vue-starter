@@ -6,13 +6,7 @@
 
 <script>
 export default {
-    name: "Button",
-    methods: {
-        emit: function() {
-            console.log("emitting from Button.vue");
-            this.$eventHub.$emit('openBox');
-        }
-    }
+    name: "Button"
 }
 
 </script>
