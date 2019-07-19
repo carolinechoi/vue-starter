@@ -12,7 +12,7 @@ export default {
             console.log("dlkfjsdlkf");
             this.$eventHub.$emit('openBox');
             console.log("emitted openBox");
-            this.$emit('clicked', '34900')
+            this.$emit('caroline', '34900')
         }
     }
 }
