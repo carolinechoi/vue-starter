@@ -1,11 +1,9 @@
 <template>
-        <dialog-drag id="dialog-1">
-          <!-- <p>x-coordinate: {{ x0 }}</p>
+        <dialog-drag style="display: none;" id="dialog-1">
+          <p>x-coordinate: {{ x0 }}</p>
           <p>y-coordinate: {{ y0 }}</p>
-          <p>z-coordinate: {{ z0 }}</p> -->
-          <!-- <div id="info" class="esri-widget"> -->
-            <div id="viewDiv"></div>
-          <!-- </div> -->
+          <p>z-coordinate: {{ z0 }}</p>
+          <div id="viewDiv"></div>
         </dialog-drag>
 </template>
 
@@ -15,9 +13,9 @@ import L from 'leaflet';
 
 // downloaded the following from https://github.com/Esri/esri-loader
 import { loadModules } from 'esri-loader';
-// let x0;
-// let y0;
-// let z0;
+let x0;
+let y0;
+let z0;
 
   export default {
     name: 'Box2',
@@ -25,30 +23,16 @@ import { loadModules } from 'esri-loader';
         DialogDrag
     },
     props: {
-        message: String
-    },
-    created() {
-      this.$eventHub.$on('openBox', this.makeAppear);
-    },
-    mounted() {
-      this.initMap();
-      // this.showmap();
-    },
-    props: {
       x0: Number,
       y0: Number,
       z0: Number
     },
+    mounted() {
+      this.$eventHub.$on("init", this.initMap);
+    },
     methods: {
-      makeAppear: function() {
-        let x = document.getElementById("dialog-1");
-        if (x.style.display === "none") {
-          x.style.display = "block";
-        } else {
-          x.style.display = "none";
-        }
-      },
-      initMap() {
+      initMap(x0, y0, z0) {
+        console.log("started initMap()");
         loadModules(['esri/Map', 'esri/views/SceneView', 'esri/layers/IntegratedMeshLayer'])
         .then(([Map, SceneView, IntegratedMeshLayer]) => {
           var layer = new IntegratedMeshLayer({
@@ -59,17 +43,15 @@ import { loadModules } from 'esri-loader';
             layers: [layer],
             ground: "world-elevation"
           });
+          console.log("started Sceneview");
           var view = new SceneView({
             container: "viewDiv",
             map: map,
             camera: {
               position: {
-                x: 3948354,
-                y: 3545,
-                z: 4565,
-                // x: this.x0,
-                // y: this.y0,
-                // z: this.z0,
+                x: this.x0,
+                y: this.y0,
+                z: this.z0,
                 spatialReference: {
                   wkid: 3857
                 }
@@ -77,7 +59,8 @@ import { loadModules } from 'esri-loader';
               tilt: 84,
               heading: 85
             }
-          }) 
+          });
+          console.log("built Sceneview"); 
         }).catch(e => {
           console.log(e);
         });

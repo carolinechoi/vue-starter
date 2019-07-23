@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <h1 @click="drop">Caroline Choi</h1>
-    <Button @caroline="onClickChild"></Button>
-    <Box2 style="display: none;" id="dialogBox"></Box2>
+    <h1>Caroline Choi</h1>
+    <Button @clicked="onClickChild"></Button>
+    <Box2 :x0="x0" :y0="y0" :z0="z0" id="dialogBox"></Box2>
   </div>
 </template>
 
@@ -12,6 +12,10 @@ import Box2 from "./components/Box2";
 import Test from "./components/Test";
 import Button from "./components/Button";
 
+let x0;
+let y0;
+let z0;
+
 export default {
   name: 'App',
   components: {
@@ -20,24 +24,37 @@ export default {
       Test,
       Button
   },
+  mounted() {
+    this.$eventHub.$on('openBox', this.makeAppear);
+  },
   methods: {
-    drop: function() {
-      console.log("test")
-    },
     makeAppear() {
-      console.log("satrted makeAppear()");
+      console.log("started makeAppear()");
+      this.$eventHub.$emit('init', this.x0, this.y0, this.z0);
       let x = document.getElementById("dialogBox");
       if (x.style.display === "none") {
+        console.log("x.style.display = none");
         x.style.display = "block";
       } else {
         x.style.display = "none";
+        console.log("set display to none");
       }
     },
-    onClickChild (value) {
+    onClickChild (x, y, z) {
       console.log("started onClickChild");
-      console.log(value);
-      this.$eventHub.$on('openBox', this.makeAppear);
-      console.log("used $eventHub");
+      this.x0 = Number(x);
+      this.y0 = Number(y);
+      this.z0 = Number(z);
+      console.log(x);
+      console.log(y);
+      console.log(z);
+    }
+  },
+  data() {
+    return {
+      x0: this.x0,
+      y0: this.y0,
+      z0: this.z0,
     }
   }
 }
