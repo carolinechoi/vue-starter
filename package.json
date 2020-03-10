@@ -14,7 +14,7 @@
     "axios": "^0.18.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
-    "dojo": "^1.15.0",
+    "dojo": "^1.15.3",
     "esri": "0.0.1-security",
     "esri-loader": "^2.10.0",
     "express": "~4.16.1",
