@@ -11,7 +11,7 @@
     "@dojo/has": "^2.0.0",
     "@dojo/shim": "^2.0.0",
     "arcgis": "^1.0.2",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dojo": "^1.15.0",
